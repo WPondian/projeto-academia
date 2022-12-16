@@ -1,0 +1,134 @@
+*{
+    font-family: 'Montserrat Regular', Arial, Helvetica, sans-serif !important; 
+}
+
+body{
+    background-color: #081515;
+}
+
+:root {
+    --tema-preto: #081515;
+    --verde-principal: #40D20B;
+    --verde-secundario: #267A08;
+    --verde-terciario: #34a00d;
+    --btn-vermelho: #D82801;
+    --btn-azul-fosco: #80C1C8;
+}
+
+label, h2{
+    color: var(--verde-principal);
+}
+
+.navbar{
+    background-color: var(--verde-principal);
+}
+
+#divLogin{
+    min-height: 100vh;
+}
+
+.btn-padrao{
+    background-color: var(--verde-secundario);
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    border: var(--verde-principal);
+    padding: 5px 50px !important;
+}
+
+.btn-padrao:hover{
+    background-color: var(--verde-terciario);
+}
+
+.btn-menu{
+    max-width: 61px;
+    min-width: 61px;
+    max-height: 61px;
+    min-height: 61px;
+    border-radius: 14px;
+    background-color: white;
+    color: var(--verde-principal);
+}
+
+
+@media screen and (min-width: 992px) {
+    .w-lg-25{width:25%!important}
+    .w-lg-50{width:50%!important}
+    .w-lg-75{width:75%!important}
+    .w-lg-100{width:100%!important}
+    .w-lg-auto{width:auto!important}
+
+    .h-lg-25{height:25%!important}
+    .h-lg-50{height:50%!important}
+    .h-lg-75{height:75%!important}
+    .h-lg-100{height:100%!important}
+
+    .font-size-lg-10 {font-size: 10px;}
+    .font-size-lg-15 {font-size: 15px;}
+    .font-size-lg-18 {font-size: 18px;}
+    .font-size-lg-20 {font-size: 20px;}
+    .font-size-lg-25 {font-size: 25px;}
+    .font-size-lg-30 {font-size: 30px;}
+    .font-size-lg-35 {font-size: 35px;}
+    .font-size-lg-40 {font-size: 40px;}
+    .font-size-lg-50 {font-size: 50px;}
+    .font-size-lg-60 {font-size: 60px;}
+
+    .btn-menu{
+        color: var(--tema-preto);
+    }
+
+    .btn-menu:hover{
+        border: 1px solid var(--verde-principal);
+        background-color: white;
+        color: var(--verde-principal);
+    }
+}
+
+@media (min-width: 1200px) {
+    .w-xl-25{width:25%!important}
+    .w-xl-50{width:50%!important}
+    .w-xl-75{width:75%!important}
+    .w-xl-100{width:100%!important}
+    .w-xl-auto{width:auto!important}
+
+    .h-xl-25{height:25%!important}
+    .h-xl-50{height:50%!important}
+    .h-xl-75{height:75%!important}
+    .h-xl-100{height:100%!important}
+
+    .font-size-xl-10 {font-size: 10px;}
+    .font-size-xl-15 {font-size: 15px;}
+    .font-size-xl-18 {font-size: 18px;}
+    .font-size-xl-20 {font-size: 20px;}
+    .font-size-xl-25 {font-size: 25px;}
+    .font-size-xl-30 {font-size: 30px;}
+    .font-size-xl-35 {font-size: 35px;}
+    .font-size-xl-40 {font-size: 40px;}
+    .font-size-xl-50 {font-size: 50px;}
+    .font-size-xl-60 {font-size: 60px;}
+}
+
+@media (min-width: 1400px) {
+    .w-xxl-25{width:25%!important}
+    .w-xxl-50{width:50%!important}
+    .w-xxl-75{width:75%!important}
+    .w-xxl-100{width:100%!important}
+    .w-xxl-auto{width:auto!important}
+
+    .h-xxl-25{height:25%!important}
+    .h-xxl-50{height:50%!important}
+    .h-xxl-75{height:75%!important}
+    .h-xxl-100{height:100%!important}
+
+    .font-size-xxl-10 {font-size: 10px;}
+    .font-size-xxl-15 {font-size: 15px;}
+    .font-size-xxl-18 {font-size: 18px;}
+    .font-size-xxl-20 {font-size: 20px;}
+    .font-size-xxl-25 {font-size: 25px;}
+    .font-size-xxl-30 {font-size: 30px;}
+    .font-size-xxl-35 {font-size: 35px;}
+    .font-size-xxl-40 {font-size: 40px;}
+    .font-size-xxl-50 {font-size: 50px;}
+    .font-size-xxl-60 {font-size: 60px;}
+}

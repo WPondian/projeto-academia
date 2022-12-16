@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url(../../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat Bold Italic";
+    src: url(../../fonts/Montserrat-BoldItalic.ttf);
+}
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url(../../fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat Light";
+    src: url(../../fonts/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat Medium";
+    src: url(../../fonts/Montserrat-Medium.ttf);
+}
+
+.font-size-10 { font-size: 10px;}
+.font-size-11 { font-size: 10px;}
+.font-size-12 { font-size: 12px;}
+.font-size-13 { font-size: 13px;}
+.font-size-14 { font-size: 14px;}
+.font-size-15 { font-size: 15px;}
+.font-size-16 { font-size: 16px;}
+.font-size-17 { font-size: 17px;}
+.font-size-18 { font-size: 18px;}
+.font-size-20 { font-size: 20px;}
+.font-size-25 { font-size: 25px;}
+.font-size-30 { font-size: 30px;}
+.font-size-35 { font-size: 35px;}
+.font-size-40 { font-size: 40px;}
+.font-size-50 { font-size: 50px;}
+.font-size-70 { font-size: 70px;}
+
+
+.montserrat-bold-italic{
+    font-family: 'Montserrat Bold Italic', Arial, Verdana, Tahoma, sans-serif !important;
+}
+
+.montserrat-medium{
+    font-family: 'Montserrat Medium', Arial, Verdana, Tahoma, sans-serif !important;
+}
