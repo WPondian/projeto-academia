@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../public_html/static/css/bootstrap/bootstrap-grid.min.css" />
+  <link rel="stylesheet" href="../../public_html/static/css/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../public_html/static/css/global/fonts.css" />
+  <link rel="stylesheet" href="../../public_html/static/css/global/reset.css" />
+  <link rel="stylesheet" href="../../public_html/static/css/global/style.css" />
+  <title>Academia Cadastro</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="row w-100">
+                <div class="col-auto px-0">
+                    <button type="button" id="btnVoltarTelaHome"><em class="fa-solid fa-arrow-left fa-2xl text-white"></em></button>
+                </div>
+                <div class="col-auto ms-auto me-auto text-center">
+                    <span class="navbar-brand mb-0 me-3 h1 montserrat-bold-italic font-size-30 text-white text-center w-100">Alunos</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+  </header>
+  <section class="container">
+    <div class="row justify-content-center mt-5">
+      <form id="formTabelaAlunos" class="col-10 mt-3">
+        <div class="row justify-content-center">
+          <div class="col-12 mb-4">
+            <label for="usuario" class="form-label montserrat-bold-italic font-size-18 text-uppercase">Nome</label>
+            <input type="text" class="form-control rounded-pill" id="usuario" />
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-8 text-center">
+            <button type="button" id="btnFiltrar" class="btn btn-primary btn-padrao rounded-pill">
+              Filtrar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <table id="tabAlunos" class="table table-striped bg-light">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">IMC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>24.56</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Thornton</td>
+            <td>29.9</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script src="../../public_html/static/js/bootstrap/bootstrap.min.js"></script>
+  <script src="../../public_html/static/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../../public_html/static/js/fontawesome/js/all.min.js"></script>
+  <script src="../../public_html/static/js/global/funcoes.js"></script>
+  <script src="../../public_html/static/js/alunos/alunos.js"></script>
+</body>
+
+</html>

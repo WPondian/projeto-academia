@@ -40,6 +40,10 @@
 .font-size-70 { font-size: 70px;}
 
 
+.montserrat-bold{
+    font-family: 'Montserrat Bold', Arial, Verdana, Tahoma, sans-serif !important;
+}
+
 .montserrat-bold-italic{
     font-family: 'Montserrat Bold Italic', Arial, Verdana, Tahoma, sans-serif !important;
 }

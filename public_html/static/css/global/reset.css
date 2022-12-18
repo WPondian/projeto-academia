@@ -88,3 +88,14 @@ select {
 	font-weight: inherit;
 	font-family: inherit;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}

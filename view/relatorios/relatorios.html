@@ -2,72 +2,79 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../public_html/static/css/bootstrap/bootstrap-grid.min.css" />
-    <link rel="stylesheet" href="../../public_html/static/css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../public_html/static/css/global/fonts.css" />
-    <link rel="stylesheet" href="../../public_html/static/css/global/reset.css" />
-    <link rel="stylesheet" href="../../public_html/static/css/global/style.css" />
-    <link rel="stylesheet" href="../../public_html/static/css/cadastrar/cadastrar.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public_html/static/css/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../public_html/static/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public_html/static/css/global/fonts.css">
+    <link rel="stylesheet" href="../../public_html/static/css/global/reset.css">
+    <link rel="stylesheet" href="../../public_html/static/css/global/style.css">
     <title>Academia Cadastro</title>
 </head>
 
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="row w-100">
+                    <div class="col-auto px-0">
+                        <button type="button" id="btnVoltarTelaHome"><em class="fa-solid fa-arrow-left fa-2xl text-white"></em></button>
+                    </div>
+                    <div class="col-auto ms-auto me-auto text-center">
+                        <span class="navbar-brand mb-0 me-3 h1 montserrat-bold-italic font-size-30 text-white text-center w-100">Relatorios</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
     <section class="container">
         <div class="row justify-content-center mt-5">
-            <div class="col-auto">
-                <h2 class="text-uppercase text-center font-size-30 montserrat-bold-italic">
-                    Cadastro usuário
-                </h2>
-            </div>
-        </div>
-        <div class="row justify-content-center mt-3">
             <form id="cadastrarUsuario" class="col-10 mt-5">
                 <div class="row justify-content-center">
                     <div class="col-12 mb-4">
                         <label for="usuario"
                             class="form-label montserrat-bold-italic font-size-18 text-uppercase">Login</label>
-                        <input type="text" class="form-control rounded-pill" id="usuario" />
+                        <input type="text" class="form-control rounded-pill" id="usuario">
                     </div>
                     <div class="col-12 mb-4">
                         <label for="senha"
                             class="form-label montserrat-bold-italic font-size-18 text-uppercase">Senha</label>
-                        <input type="password" class="form-control rounded-pill" id="senha" />
+                        <input type="password" class="form-control rounded-pill" id="senha">
                     </div>
                     <div class="col-12 mb-4">
                         <label for="nome"
                             class="form-label montserrat-bold-italic font-size-18 text-uppercase">Nome</label>
-                        <input type="text" class="form-control rounded-pill" id="nome" />
+                        <input type="text" class="form-control rounded-pill" id="nome">
                     </div>
                     <div class="col-12 mb-4">
                         <label for="endereco"
                             class="form-label montserrat-bold-italic font-size-18 text-uppercase">Endereço</label>
-                        <input type="text" class="form-control rounded-pill" id="endereco" />
+                        <input type="text" class="form-control rounded-pill" id="endereco">
                     </div>
                     <div class="col-12 mb-4">
                         <label for="telefone"
                             class="form-label montserrat-bold-italic font-size-18 text-uppercase">Telefone</label>
-                        <input type="text" class="form-control rounded-pill" id="telefone" />
+                        <input type="text" class="form-control rounded-pill" id="telefone">
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-6 mb-4">
-                        <label for="peso" class="form-label montserrat-bold-italic font-size-18 text-uppercase">Peso</label>
-                        <input type="text" class="form-control rounded-pill maskPeso" maxlength="6" id="peso"/>
+                        <label for="cadastroPeso"
+                            class="form-label montserrat-bold-italic font-size-18 text-uppercase">Peso</label>
+                        <input type="text" class="form-control rounded-pill" id="cadastroPeso">
                     </div>
                     <div class="col-6 mb-4">
-                        <label for="altura" class="form-label montserrat-bold-italic font-size-18 text-uppercase">Altura</label>
-                        <input type="text" class="form-control rounded-pill maskAltura"  maxlength="4"  id="altura"/>
+                        <label for="cadastroAltura"
+                            class="form-label montserrat-bold-italic font-size-18 text-uppercase">Altura</label>
+                        <input type="text" class="form-control rounded-pill" id="cadastroAltura">
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-6">
                         <div class="row">
                             <div class="col-auto form-check form-check-reverse">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="cadastroAluno" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="cadastroAluno">
                                 <label
                                     class="form-check-label mt-1 ps-3 pe-2 montserrat-bold-italic font-size-18 text-uppercase"
                                     for="cadastroAluno">
@@ -80,7 +87,7 @@
                         <div class="row">
                             <div class="col-auto form-check form-check-reverse align-self">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="cadastroProfessor" />
+                                    id="cadastroProfessor">
                                 <label
                                     class="form-check-label mt-1 ps-3 pe-2 montserrat-bold-italic font-size-18 text-uppercase"
                                     for="cadastroProfessor">
@@ -92,16 +99,8 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-8 mt-5 text-center">
-                        <button type="button" id="btnCadastrar" class="btn btn-padrao rounded-pill">
-                            Cadastrar
-                        </button>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-8 mt-4 text-center">
-                        <button type="button" id="btnCancelarCadastrar" class="btn btn-cancelar-padrao rounded-pill">
-                            Cancelar
-                        </button>
+                        <button type="button" id="btnCadastrar"
+                            class="btn btn-primary btn-padrao rounded-pill">Cadastrar</button>
                     </div>
                 </div>
             </form>
@@ -110,12 +109,9 @@
 
     <script src="../../public_html/static/js/bootstrap/bootstrap.min.js"></script>
     <script src="../../public_html/static/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../../public_html/static/js/sweetalert2/sweetalert2.all.min.js"></script>
-    <script src="../../public_html/static/js/jquery/jquery-3.6.2.js"></script>
-    <script src="../../public_html/static/js/jquery/jquery.mask.js"></script>
-    <script src="../../public_html/static/js/global/mascaras.js"></script>
+    <script src="../../public_html/static/js/fontawesome/js/all.min.js"></script>
     <script src="../../public_html/static/js/global/funcoes.js"></script>
-    <script src="../../public_html/static/js/cadastro/cadastro.js"></script>
+    <script src="../../public_html/static/js/relatorios/relatorios.js"></script>
 </body>
 
 </html>

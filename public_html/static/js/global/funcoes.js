@@ -1,3 +1,24 @@
+
+let btnVoltarTelaHome = document.querySelector('#btnVoltarTelaHome');
+
+if(btnVoltarTelaHome){
+    btnVoltarTelaHome.onclick = () => {
+        window.location.href = window.location.origin  + '/projeto-academia/view/home/home.html';
+    }
+}
+
+let Toast = Swal.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+})
+
 function prepararRequisicao(metodo, dados, json = false) {
     const formData = new FormData();
     Object.keys(dados).forEach(key => formData.append(key, dados[key]));
@@ -17,9 +38,11 @@ async function fetchPadrao(requestInfo, init) {
         const response = await fetch(requestInfo, init);
         const retorno = await response.json();
         return retorno;
-    
     } catch (error) {
-        console.error('fetchPadrao', error);
-        return alert('Um erro inesperado ocorreu, tente novamente mais tarde ou entre em contato!');
+        Toast.fire({
+            icon: 'error',
+            title: error
+        })
+        return;
     }
 }

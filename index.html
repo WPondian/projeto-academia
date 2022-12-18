@@ -2,47 +2,56 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="view/static/css/bootstrap/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="view/static/css/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="view/static/css/global/fonts.css">
-  <link rel="stylesheet" href="view/static/css/global/reset.css">
-  <link rel="stylesheet" href="view/static/css/global/style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="public_html/static/css/bootstrap/bootstrap-grid.min.css" />
+  <link rel="stylesheet" href="public_html/static/css/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="public_html/static/css/global/fonts.css" />
+  <link rel="stylesheet" href="public_html/static/css/global/reset.css" />
+  <link rel="stylesheet" href="public_html/static/css/global/style.css" />
   <title>Academia 2022</title>
 </head>
 
 <body>
   <section class="container">
     <div id="divLogin" class="row justify-content-center align-items-center">
-      <form class="col-6">
-        <h2 class="text-uppercase text-center font-size-50 montserrat-bold-italic mb-2">Academia</h2>
-        <h2 class="text-uppercase text-center font-size-70 montserrat-bold-italic mb-4">2022</h2>
-        <div class="row justify-content-center ">
+      <form class="col-auto">
+        <h2 class="text-uppercase text-center font-size-50 montserrat-bold-italic mb-2">
+          Academia
+        </h2>
+        <h2 class="text-uppercase text-center font-size-70 montserrat-bold-italic mb-4">
+          2022
+        </h2>
+        <div class="row justify-content-center">
           <div class="col-8 mt-5">
             <label for="loginUsuario" class="form-label montserrat-bold-italic font-size-25">Login</label>
-            <input type="text" class="form-control rounded-pill" id="loginUsuario" placeholder="Digite seu usuário">
+            <input type="text" class="form-control form-control-lg rounded-pill" id="loginUsuario" placeholder="Digite seu usuário" />
           </div>
           <div class="col-8 mt-5 mb-3">
             <label for="loginSenha" class="form-label montserrat-bold-italic font-size-25">Senha</label>
-            <input type="password" class="form-control rounded-pill" id="loginSenha" placeholder="Digite sua senha">
+            <input type="password" class="form-control form-control-lg rounded-pill" id="loginSenha" placeholder="Digite sua senha" />
           </div>
           <div class="col-8 my-5 text-center">
-            <button type="submit" id="btnRealizarLogin" class="btn btn-primary btn-padrao rounded-pill">Entrar</button>
+            <button type="button" id="btnRealizarLogin" class="btn btn-primary btn-padrao rounded-pill">
+              Entrar
+            </button>
           </div>
           <div class="col-8 mt-5 text-center">
-            <a id="btnAbirCadastrar" class="btn btn-primary btn-padrao rounded-pill">Cadastrar</a>
+            <button type="button" id="btnAbrirCadastrar" class="btn btn-primary btn-padrao rounded-pill">
+              Cadastrar
+            </button>
           </div>
         </div>
       </form>
     </div>
   </section>
 
-  <script src="view/static/js/global/funcoes.js"></script>
-  <script src="view/static/js/login/login.js"></script>
-  <script src="view/static/js/bootstrap/bootstrap.min.js"></script>
-  <script src="view/static/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="public_html/static/js/bootstrap/bootstrap.min.js"></script>
+  <script src="public_html/static/js/bootstrap/bootstrap.min.js"></script>
+  <script src="public_html/static/js/sweetalert2/sweetalert2.all.min.js"></script>
+  <script src="public_html/static/js/global/funcoes.js"></script>
+  <script src="public_html/static/js/login/login.js"></script>
 </body>
 
 </html>

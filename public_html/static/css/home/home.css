@@ -1,0 +1,28 @@
+.fundoImc{
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+}
+
+#homePeso, #homeAltura, #homeImc{
+max-width: 150px;
+}
+
+.cabecalho-tabela-imc{
+    background-color: #818181;
+}
+
+.baixo-peso{
+    background-color: #83C635;
+}
+
+.normal{
+    background-color: #39bd0a;
+}
+
+.sobrepeso{
+    background-color: #FCA500;
+}
+
+.obesidade{
+    background-color: #F67600;
+}

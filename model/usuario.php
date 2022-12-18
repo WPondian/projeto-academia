@@ -1,6 +1,7 @@
 <?php
 include_once 'conexao.php'; 
 include_once 'comumFuncoes.php'; 
+include_once 'imcUsuario.php'; 
 class Usuario{
     public $nome;
     public $cod;
@@ -27,20 +28,49 @@ class Usuario{
         $stmt = $conexao->prepare("SELECT * FROM tb_usuario WHERE usuario=:usuario");
         $stmt->execute(['usuario' => $usuario]); 
         $result = $stmt->fetch();
-        if ($result['usuario'] == $usuario) {
+        if (!empty($result)) {
             if ($sen==$result['senha']){
-                Usuario::Setcod($result['cod']);
-                Usuario::Setnome($result['nome']);
+                session_start();
+                $_SESSION['cod_usuario'] = $result['cod'];
+                $_SESSION['nome_usuario'] = $result['nome'];
+                $resposta = ComumFuncoes::formataResposta(false,'sucesso',false);
+                echo json_encode($resposta);
             }else{
-                echo("0");
+                $resposta = ComumFuncoes::formataResposta(true,'Senha incorreta!',true);
+                echo json_encode($resposta);
             }
             
         }else{
-            return false;
+            $resposta = ComumFuncoes::formataResposta(true,'Usuario não encontrado!',true);
+            echo json_encode($resposta);
         }
     }
 
-    function Cadastrar($usuario,$senha,$nome,$telefone,$endereco,$categoria){
+    public function UsuarioExiste($usuario)
+    {
+        $conexao = Conexao::getInstance();
+        $stmt = $conexao->prepare("SELECT * FROM tb_usuario WHERE usuario=:usuario");
+        $stmt->execute(['usuario' => $usuario]); 
+        $result = $stmt->fetch();
+        if (!empty($result)) {
+            $resposta = ComumFuncoes::formataResposta(true,'Nome de usuario já existe!',true);
+            echo json_encode($resposta);
+        }else{
+            $resposta = ComumFuncoes::formataResposta(false,'',false);
+            echo json_encode($resposta);
+        }
+    }
+
+    public function capturarCodUsuario($usuario)
+    {
+        $conexao = Conexao::getInstance();
+        $stmt = $conexao->prepare("SELECT * FROM tb_usuario WHERE usuario=:usuario");
+        $stmt->execute(['usuario' => $usuario]); 
+        $result = $stmt->fetch();
+        return $result['cod'];
+    }
+
+    function Cadastrar($usuario,$senha,$nome,$telefone,$endereco,$categoria,$peso,$altura){
         try{
             $pdo = Conexao::getInstance();
             $stmt = $pdo->prepare('INSERT INTO tb_usuario (usuario,senha,nome,telefone,endereco,categoria) VALUES(:usuario,:senha,:nome,:telefone,:endereco,:categoria)');
@@ -52,13 +82,17 @@ class Usuario{
             $stmt->bindParam(':categoria', $categoria);
 
             $result = $stmt->execute();
-            $resposta = ComumFuncoes::formataResposta($result,'',false);
+            $respostaUsuario = ComumFuncoes::formataResposta($result,'',false);
+
+            $codUsuario = Usuario::capturarCodUsuario($usuario);
             
-            return json_encode($resposta);
+            $respostaImc = ImcUsuario::cadastrarImc($altura, $peso, $codUsuario, $categoria, true);
+            
+            echo json_encode($respostaUsuario);
         }
         catch(Exception $e){
             $resposta = ComumFuncoes::formataResposta($e,'Houve uma falha ao cadastrar o usuário!',true);
-            return $resposta;
+            echo json_encode($resposta);
         }
     }
 

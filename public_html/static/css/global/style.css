@@ -9,8 +9,8 @@ body{
 :root {
     --tema-preto: #081515;
     --verde-principal: #40D20B;
-    --verde-secundario: #267A08;
-    --verde-terciario: #34a00d;
+    --verde-secundario: #348f13;
+    --verde-terciario: #33b803;
     --btn-vermelho: #D82801;
     --btn-azul-fosco: #80C1C8;
 }
@@ -19,8 +19,16 @@ label, h2{
     color: var(--verde-principal);
 }
 
+input{
+    border: 1px solid rgb(44, 43, 43) !important;
+}
+
 .navbar{
     background-color: var(--verde-principal);
+}
+
+.cor-principal{
+color: var(--verde-principal);
 }
 
 #divLogin{
@@ -31,13 +39,44 @@ label, h2{
     background-color: var(--verde-secundario);
     color: white;
     font-size: 24px;
-    font-weight: 600;
-    border: var(--verde-principal);
+    font-weight: bold;
+    border: 1px solid var(--verde-principal);
     padding: 5px 50px !important;
 }
 
-.btn-padrao:hover{
+.btn-cancelar-padrao{
+    background-color: rgb(172, 3, 3);
+    color: white;
+    font-size: 24px;
+    border: 1px solid rgb(233, 7, 7);
+    font-weight: 600;
+    padding: 5px 50px !important;
+}
+
+.btn-padrao-modal{
+    min-width: 150px;
+    background-color: var(--verde-secundario);
+    color: white;
+    font-weight: bold;
+    border: 1px solid var(--verde-principal);
+}
+
+.btn-cancelar-modal{
+    min-width: 150px;
+    background-color: rgb(172, 3, 3);
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgb(233, 7, 7);
+}
+
+.btn-padrao:hover, .btn-padrao-modal:hover, .btn-padrao-modal:focus{
     background-color: var(--verde-terciario);
+    color: white;
+}
+
+.btn-cancelar-padrao:hover, .btn-cancelar-modal:hover,.btn-cancelar-modal:focus{
+    background-color: rgb(233, 7, 7);
+    color: white;
 }
 
 .btn-menu{
@@ -46,6 +85,11 @@ label, h2{
     max-height: 61px;
     min-height: 61px;
     border-radius: 14px;
+    background-color: white;
+    color: var(--verde-principal);
+}
+
+.btn-menu:hover, .btn-menu:focus{
     background-color: white;
     color: var(--verde-principal);
 }
@@ -73,16 +117,6 @@ label, h2{
     .font-size-lg-40 {font-size: 40px;}
     .font-size-lg-50 {font-size: 50px;}
     .font-size-lg-60 {font-size: 60px;}
-
-    .btn-menu{
-        color: var(--tema-preto);
-    }
-
-    .btn-menu:hover{
-        border: 1px solid var(--verde-principal);
-        background-color: white;
-        color: var(--verde-principal);
-    }
 }
 
 @media (min-width: 1200px) {
