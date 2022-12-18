@@ -7,6 +7,7 @@ let btnAbrirModalSair = document.querySelector('#btnAbrirModalSair');
 let btnAbrirModalAtualizarImc = document.querySelector('#btnAbrirModalAtualizarImc');
 let btnAtualizarImc = document.querySelector('#btnAtualizarImc');
 let btnDeslogar = document.querySelector('#btnDeslogar');
+let divBtnAlunos = document.querySelector('#divBtnAlunos');
 let campoIMCAtual = document.querySelector('#homeImc');
 let campoPeso = document.querySelector('#homePeso');
 let campoAltura = document.querySelector('#homeAltura');
@@ -52,6 +53,42 @@ async function buscarDadosCliente () {
         campoIMCAtual.value = retorno.list.imc.toFixed(2);
         campoPeso.value = retorno.list.peso;
         campoAltura.value = retorno.list.altura;
+        divBtnAlunos.classList.remove('d-none');
+
+        if(retorno.list.categoria === 'A'){
+            divBtnAlunos.classList.add('d-none');
+        }
+        
+
+        return;
+
+    } catch (error) {
+        return false;
+    }
+}
+
+async function buscarDadosCliente () {
+    const requestInfo = new Request('http://localhost/projeto-academia/controller/consultar-imc.php');
+    const init = prepararRequisicao('POST', {});
+    try {
+        const retorno = await fetchPadrao(requestInfo, init);
+
+        if (retorno.erro) {
+            Toast.fire({
+                icon: 'error',
+                title: retorno.message
+            })
+            return retorno;
+        }
+
+        campoIMCAtual.value = retorno.list.imc.toFixed(2);
+        campoPeso.value = retorno.list.peso;
+        campoAltura.value = retorno.list.altura;
+        divBtnAlunos.classList.remove('d-none');
+
+        if(retorno.list.categoria === 'A'){
+            divBtnAlunos.classList.add('d-none');
+        }
         
 
         return;

@@ -3,8 +3,8 @@
     border-radius: 0 0 8px 8px;
 }
 
-#homePeso, #homeAltura, #homeImc{
-max-width: 150px;
+#divHomePeso, #divHomeAltura, #divHomeImc{
+max-width: 150px !important;
 }
 
 .cabecalho-tabela-imc{
