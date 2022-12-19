@@ -11,3 +11,5 @@ Sistema desenvolvido para o hackathon – Programa para Finalização de Curso d
 ## Configuração do Projeto
   Após baixar o projeto criar data base com o nome "academia"
   Importar arquivo contido dentro da pasta do projeto "academia.sql"
+  
+  OBS: Também a opção de baixar o arquivo projetoAcademia.apk para instalar o aplicativo em celulares android. (versão de teste);
