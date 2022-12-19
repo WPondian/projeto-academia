@@ -15,7 +15,7 @@ class ComumFuncoes{
         $altura = floatval($altura);
         $peso = floatval($peso);
         $imc = $peso / ($altura*$altura);
-        return $imc;
+        return number_format($imc, 2, '.', '');
     }
 }
 

@@ -8,7 +8,7 @@ class ImcUsuario{
         $imc = ComumFuncoes::calcularImc($altura,$peso);
         $pdo = Conexao::getInstance();
         $stmt = $pdo->prepare('INSERT INTO tb_imc (altura,peso,imc,cod_usuario,categoria,imc_atual) VALUES(:altura,:peso,:imc,:cod,:categoria,:imcAtual)');
-        $stmt->execute(array(
+        $result = $stmt->execute(array(
             ':altura' => $altura,
             ':peso' => $peso,
             ':imc' => $imc,
@@ -16,7 +16,6 @@ class ImcUsuario{
             ':categoria' => $categoria,
             ':imcAtual' => 1
         ));
-        $result = $stmt;
         
         if(!$interno){
             $resposta = ComumFuncoes::formataResposta($result,'sucesso!',false);
@@ -110,13 +109,11 @@ class ImcUsuario{
                 ':cod'=> $cod
             ));
             
-            echo json_encode($result);
+            return $result;
         } catch (Exception $e) {
             echo json_encode($e);
         }
     }
-
 }
-
 
 ?>

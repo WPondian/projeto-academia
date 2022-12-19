@@ -1,3 +1,6 @@
+const modalAtualizarImc = new bootstrap.Modal(document.getElementById('modalAtualizarImc'), {keyboard: false});
+
+const modalSair = new bootstrap.Modal(document.getElementById('modalSair'), {keyboard: false});
 
 let btnTelaPerfil = document.querySelector('#btnTelaPerfil');
 let btnTelaAlunos = document.querySelector('#btnTelaAlunos');
@@ -11,6 +14,8 @@ let divBtnAlunos = document.querySelector('#divBtnAlunos');
 let campoIMCAtual = document.querySelector('#homeImc');
 let campoPeso = document.querySelector('#homePeso');
 let campoAltura = document.querySelector('#homeAltura');
+let campoPesoModal = document.querySelector('#modalPeso');
+let campoAlturaModal = document.querySelector('#modalAltura');
 
 buscarDadosCliente();
 
@@ -20,24 +25,23 @@ btnTelaAlunos.onclick = () => window.location.href = window.location.origin  + '
 
 btnTelaTreinos.onclick = () => window.location.href = window.location.origin  + '/projeto-academia/view/treinos/treinos.html';
 
-btnTelaRelatorios.onclick = () => window.location.href = window.location.origin  + '/projeto-academia/view/relatorios/relatorios.html';
+btnTelaRelatorios.onclick = () => window.location.href = window.location.origin  + '/projeto-academia/view/relatorios/relatorios.php';
 
 btnDeslogar.onclick = () => window.location.href = window.location.origin  + '/projeto-academia/index.html';
 
-btnAbrirModalAtualizarImc.onclick = () => {
-    const modalBootstrap = new bootstrap.Modal('#modalAtualizarImc', {keyboard: false})
-    const modalAtualizarImc = document.getElementById('modalAtualizarImc'); 
-    modalBootstrap.show(modalAtualizarImc);
-}
-btnAbrirModalSair.onclick = () => {
-    const modalBootstrap = new bootstrap.Modal('#modalSair', {keyboard: false})
-    const modalSair = document.getElementById('modalSair'); 
-    modalBootstrap.show(modalSair);
-}
+btnAbrirModalAtualizarImc.onclick = () =>{
+    campoPesoModal.value = '';
+    campoAlturaModal.value = '';
+    modalAtualizarImc.show();
+} 
+
+btnAbrirModalSair.onclick = () => modalSair.show();
+
+btnAtualizarImc.onclick = () => atualizarImc();
 
 
 async function buscarDadosCliente () {
-    const requestInfo = new Request('http://localhost/projeto-academia/controller/consultar-imc.php');
+    const requestInfo = new Request(window.location.origin + '/projeto-academia/controller/consultar-imc.php');
     const init = prepararRequisicao('POST', {});
     try {
         const retorno = await fetchPadrao(requestInfo, init);
@@ -50,7 +54,7 @@ async function buscarDadosCliente () {
             return retorno;
         }
 
-        campoIMCAtual.value = retorno.list.imc.toFixed(2);
+        campoIMCAtual.value = retorno.list.imc.toFixed(2).replace('.',',');
         campoPeso.value = retorno.list.peso;
         campoAltura.value = retorno.list.altura;
         divBtnAlunos.classList.remove('d-none');
@@ -67,9 +71,13 @@ async function buscarDadosCliente () {
     }
 }
 
-async function buscarDadosCliente () {
-    const requestInfo = new Request('http://localhost/projeto-academia/controller/consultar-imc.php');
-    const init = prepararRequisicao('POST', {});
+async function atualizarImc () {
+    const dados = {
+        altura: campoAlturaModal.value ? parseFloat(campoAlturaModal.value.replace(',', '.')) : '', 
+        peso: campoPesoModal.value
+    };
+    const requestInfo = new Request(window.location.origin + '/projeto-academia/controller/novo-imc.php');
+    const init = prepararRequisicao('POST', dados);
     try {
         const retorno = await fetchPadrao(requestInfo, init);
 
@@ -81,15 +89,13 @@ async function buscarDadosCliente () {
             return retorno;
         }
 
-        campoIMCAtual.value = retorno.list.imc.toFixed(2);
-        campoPeso.value = retorno.list.peso;
-        campoAltura.value = retorno.list.altura;
-        divBtnAlunos.classList.remove('d-none');
-
-        if(retorno.list.categoria === 'A'){
-            divBtnAlunos.classList.add('d-none');
-        }
+        Toast.fire({
+            icon: 'success',
+            title: 'Imc atualizado com sucesso!'
+        })
         
+        modalAtualizarImc.hide();
+        await buscarDadosCliente();
 
         return;
 

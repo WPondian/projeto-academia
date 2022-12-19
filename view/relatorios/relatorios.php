@@ -10,10 +10,16 @@
     <link rel="stylesheet" href="../../public_html/static/css/global/fonts.css">
     <link rel="stylesheet" href="../../public_html/static/css/global/reset.css">
     <link rel="stylesheet" href="../../public_html/static/css/global/style.css">
+    <link rel="stylesheet" href="../../public_html/static/css/relatorios/relatorios.css">
     <title>Academia Cadastro</title>
 </head>
 
+<?php 
+    session_start();
+?>
+
 <body>
+    <input type="hidden" id="sessaoCategoria" value="<?= $_SESSION['categoria'] ?>">
     <header>
         <nav class="navbar">
             <div class="container-fluid">
@@ -28,12 +34,33 @@
             </div>
         </nav>
     </header>
-    <section class="container">
+
+    <section id="sectionRelatorioProfessor" class="container-fluid bg-white d-none">
+        <div class="row justify-content-center">
+            <div class="col-auto text-center mt-4">
+                <h4 class="montserrat-bold cor-principal font-size-20">Porcentagem de alunos nas classificações do IMC</h4>
+            </div>
+        </div>
         <div class="row justify-content-center mt-5">
-            <div id="myPieChart">
+            <div id="divGraficoImcAlunos">
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div id="" class="text-center">
         </div>
     </section>
 
+    <section id="sectionRelatorioAluno" class="container-fluid bg-white d-none">
+        <div class="row justify-content-center">
+            <div class="col-auto text-center mt-5">
+                <h4 class="montserrat-bold cor-principal font-size-20">Relatório Imc</h4>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div id="divGraficoRelatorioImc">
+        </div>
+    </section>
+
+    <script src="../../public_html/static/js/global/moment.js"></script>
     <script src="../../public_html/static/js/bootstrap/bootstrap.min.js"></script>
     <script src="../../public_html/static/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="../../public_html/static/js/fontawesome/js/all.min.js"></script>

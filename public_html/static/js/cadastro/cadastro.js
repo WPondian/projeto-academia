@@ -49,7 +49,7 @@ btnCadastrar.onclick = async () => {
 }
 
 async function exiteUsuario(usuario) {
-    const requestInfo = new Request('http://localhost/projeto-academia/controller/usuario-existe.php');
+    const requestInfo = new Request(window.location.origin + '/projeto-academia/controller/usuario-existe.php');
     const init = prepararRequisicao('POST', {usuario:usuario});
     try {
         const retorno = await fetchPadrao(requestInfo, init);
@@ -70,7 +70,7 @@ async function exiteUsuario(usuario) {
 }
 
 async function cadastrarUsuario(dados) {
-    const requestInfo = new Request('http://localhost/projeto-academia/controller/usuario-cadastrar.php');
+    const requestInfo = new Request(window.location.origin + '/projeto-academia/controller/usuario-cadastrar.php');
     const init = prepararRequisicao('POST', dados);
     try {
         const retorno = await fetchPadrao(requestInfo, init);

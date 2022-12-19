@@ -16,56 +16,43 @@
 <body>
   <header>
     <nav class="navbar">
-        <div class="container-fluid">
-            <div class="row w-100">
-                <div class="col-auto px-0">
-                    <button type="button" id="btnVoltarTelaHome"><em class="fa-solid fa-arrow-left fa-2xl text-white"></em></button>
-                </div>
-                <div class="col-auto ms-auto me-auto text-center">
-                    <span class="navbar-brand mb-0 me-3 h1 montserrat-bold-italic font-size-30 text-white text-center w-100">Alunos</span>
-                </div>
-            </div>
+      <div class="container-fluid">
+        <div class="row w-100">
+          <div class="col-auto px-0">
+            <button type="button" id="btnVoltarTelaHome"><em
+                class="fa-solid fa-arrow-left fa-2xl text-white"></em></button>
+          </div>
+          <div class="col-auto ms-auto me-auto text-center">
+            <span
+              class="navbar-brand mb-0 me-3 h1 montserrat-bold-italic font-size-30 text-white text-center w-100">Alunos</span>
+          </div>
         </div>
+      </div>
     </nav>
   </header>
   <section class="container">
     <div class="row justify-content-center mt-5">
-      <form id="formTabelaAlunos" class="col-10 mt-3">
-        <div class="row justify-content-center">
-          <div class="col-12 mb-4">
-            <label for="usuario" class="form-label montserrat-bold-italic font-size-18 text-uppercase">Nome</label>
-            <input type="text" class="form-control rounded-pill" id="usuario" />
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-8 text-center">
-            <button type="button" id="btnFiltrar" class="btn btn-primary btn-padrao rounded-pill">
-              Filtrar
-            </button>
-          </div>
-        </div>
-      </form>
+      <div class="col-10 mb-4">
+        <label for="nomeAluno" class="form-label montserrat-bold-italic font-size-18 text-uppercase">Nome</label>
+        <input type="text" class="form-control rounded-pill" id="nomeAluno" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-8 text-center">
+        <button type="button" id="btnFiltrarAlunos" class="btn btn-primary btn-padrao rounded-pill">
+          Filtrar
+        </button>
+      </div>
     </div>
     <div class="row justify-content-center mt-5">
       <table id="tabAlunos" class="table table-striped bg-light">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">IMC</th>
+            <th class="fw-bold" scope="col">Nome</th>
+            <th class="fw-bold" scope="col">IMC</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>24.56</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Thornton</td>
-            <td>29.9</td>
-          </tr>
         </tbody>
       </table>
     </div>

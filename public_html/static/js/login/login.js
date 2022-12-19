@@ -26,7 +26,7 @@ async function realizarLogin() {
         senha: document.querySelector('#loginSenha').value,
     }
 
-    const requestInfo = new Request('http://localhost/projeto-academia/controller/login.php');
+    const requestInfo = new Request(window.location.origin + '/projeto-academia/controller/login.php');
     const init = prepararRequisicao('POST', dados);
     try {
         const retorno = await fetchPadrao(requestInfo, init);
